@@ -3,7 +3,7 @@ import Component from "./Component";
 // 1. will start by creating a Card component
 // 2. will need to render content
 // 3. will need a personaje object for character__card
-class Card extends Component {
+export default class Card extends Component {
   constructor(parentElement, className, htmlTag) {
     super(parentElement, className, htmlTag);
 
