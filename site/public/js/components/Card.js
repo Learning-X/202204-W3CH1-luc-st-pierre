@@ -3,7 +3,8 @@ import Component from "./Component.js";
 // 1. will start by creating a Card component
 // 2. will need to render content
 // 3. will need a personaje object for character__card
-export default class Card extends Component {
+// 4. will need to destructure personaje
+class Card extends Component {
   constructor(parentElement, className, htmlTag, personaje) {
     super(parentElement, className, htmlTag);
 
@@ -19,10 +20,10 @@ export default class Card extends Component {
               class="character__picture card-img-top"
             />
             <div class="card-body">
-              <h2 class="character__name card-title h4">Nombre y familia</h2>
+              <h2 class="character__name card-title h4">${personaje.nombre} y ${personaje.familia}</h2>
               <div class="character__info">
                 <ul class="list-unstyled">
-                  <li>Edad: X años</li>
+                  <li>Edad: ${personaje.edad} años</li>
                   <li>
                     Estado:
                     <i class="fas fa-thumbs-down"></i>
@@ -50,3 +51,4 @@ export default class Card extends Component {
     `;
   }
 }
+export default Card;
