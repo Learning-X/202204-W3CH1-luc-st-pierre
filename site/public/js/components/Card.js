@@ -15,12 +15,14 @@ class Card extends Component {
     this.element.innerHtml = `
       <div class="card character__card">
             <img
-              src="img/no-one.jpeg"
+              src="img/${personaje.nombre.toLowerCase()}.jpeg"
               alt="Nombre y familia del personaje"
               class="character__picture card-img-top"
             />
             <div class="card-body">
-              <h2 class="character__name card-title h4">${personaje.nombre} y ${personaje.familia}</h2>
+              <h2 class="character__name card-title h4">${personaje.nombre} y ${
+      personaje.familia
+    }</h2>
               <div class="character__info">
                 <ul class="list-unstyled">
                   <li>Edad: ${personaje.edad} años</li>
