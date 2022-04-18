@@ -4,6 +4,6 @@ export default class Component {
   constructor(parentElement, className, htmlTag) {
     this.element = document.createElement(htmlTag);
     this.element.className = className;
-    parentElement.appendChild(this.element);
+    parentElement.append(this.element);
   }
 }

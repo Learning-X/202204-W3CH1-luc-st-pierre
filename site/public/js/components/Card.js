@@ -1,16 +1,16 @@
-import Component from "./Component";
+import Component from "./Component.js";
 
 // 1. will start by creating a Card component
 // 2. will need to render content
 // 3. will need a personaje object for character__card
 export default class Card extends Component {
-  constructor(parentElement, className, htmlTag) {
+  constructor(parentElement, className, htmlTag, personaje) {
     super(parentElement, className, htmlTag);
 
     this.render();
   }
 
-  render() {
+  render(personaje) {
     this.element.innerHtml = `
       <div class="card character__card">
             <img

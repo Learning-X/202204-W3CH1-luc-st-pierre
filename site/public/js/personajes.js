@@ -13,6 +13,8 @@ const initPersonajes = () => {
   const bronn = new Escudero("Bronn", "AguasNegras", 54, 0, jaime);
 
   personajes.push(joffrey, jaime, daenerys, tyrion, bronn);
+
+  return personajes;
 };
 
 export default initPersonajes;
