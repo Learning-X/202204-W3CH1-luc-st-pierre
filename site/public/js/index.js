@@ -1,3 +1,3 @@
-import Rey from "./Rey.js";
+import initPersonajes from "./personajes.js";
 
-const joffrey = new Rey("Joffrey", "Baratheon", 16, 2);
+initPersonajes();
