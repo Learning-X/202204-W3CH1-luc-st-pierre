@@ -7,7 +7,7 @@ export default class Card extends Component {
   constructor(parentElement, className, htmlTag, personaje) {
     super(parentElement, className, htmlTag);
 
-    this.render();
+    this.render(personaje);
   }
 
   render(personaje) {
