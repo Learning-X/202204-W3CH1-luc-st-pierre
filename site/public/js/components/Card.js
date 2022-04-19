@@ -12,7 +12,7 @@ class Card extends Component {
   }
 
   render(personaje) {
-    this.element.innerHtml = `
+    this.element.innerHTML = `
       <div class="card character__card">
             <img
               src="img/${personaje.nombre.toLowerCase()}.jpeg"
