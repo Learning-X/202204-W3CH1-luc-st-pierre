@@ -12,6 +12,7 @@ class Card extends Component {
 
     this.render(personaje);
     this.renderPersonajeProperties(personajeProperties);
+    this.renderEmojis(personaje);
   }
 
   render(personaje) {
@@ -60,6 +61,14 @@ class Card extends Component {
       personajeProperty.textContent = prop;
       characterOverlay.append(personajeProperty);
     });
+  }
+
+  renderEmojis(personaje) {
+    const emojiContainer = this.element.querySelector(".card.character__card");
+    const emojiElement = document.createElement("i");
+    emojiElement.className = "emoji";
+    emojiContainer.append(emojiElement);
+    // console.log(emojiContainer);
   }
 }
 export default Card;
