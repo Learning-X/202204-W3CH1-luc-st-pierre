@@ -3,8 +3,11 @@ import Escudero from "../personajes/Escudero.js";
 
 import Personaje from "./Personaje.js";
 
-// todo - Need to get toUpperCase first letter property and a space between two word if needed
+export const hablaButtonAction = () => {};
 
+export const muereButtonAction = () => {};
+
+// todo - Need to get toUpperCase first letter property and a space between two word if needed
 const getPersonajeProperties = (personaje) => {
   const personajeClassProperties = Object.getOwnPropertyNames(personaje);
 

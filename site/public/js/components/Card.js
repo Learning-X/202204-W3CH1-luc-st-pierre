@@ -1,4 +1,4 @@
-import ButtonComponent from "./Button.js";
+import Button from "./Button.js";
 import Component from "./Component.js";
 
 class Card extends Component {
@@ -104,11 +104,11 @@ class Card extends Component {
     const personajeActions = this.element.querySelector(".character__actions");
 
     buttons.forEach((btn) => {
-      const button = new ButtonComponent(
+      const button = new Button(
         personajeActions,
         "character__action btn",
         btn.text,
-        {}
+        [{ event: "click", action: btn.action }]
       );
       return button;
     });
