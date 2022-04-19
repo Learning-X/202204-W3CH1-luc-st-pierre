@@ -1,3 +1,4 @@
+import Button from "./Button.js";
 import Component from "./Component.js";
 
 class Card extends Component {
@@ -6,7 +7,8 @@ class Card extends Component {
     className,
     htmlTag,
     personaje,
-    personajeProperties
+    personajeProperties,
+    buttons
   ) {
     super(parentElement, className, htmlTag);
 
@@ -14,6 +16,7 @@ class Card extends Component {
     this.renderPersonajeProperties(personajeProperties);
     this.renderPersonajeEmojis(personaje);
     this.renderPersonajeState(personaje);
+    this.renderButtons(buttons);
   }
 
   renderCard(personaje) {
@@ -41,12 +44,9 @@ class Card extends Component {
                 <ul class="list-unstyled">
                 </ul>
                 <div class="character__actions">
-                  <button class="character__action btn">habla</button>
-                  <button class="character__action btn">muere</button>
                 </div>
               </div>
             </div>
-            <i class="emoji"></i>
           </div>
     `;
   }
@@ -98,6 +98,20 @@ class Card extends Component {
     const icon = document.createElement("i");
     icon.className = personaje.vivo ? "fas fa-thumbs-up" : "fas fa-thumbs-down";
     personajeInfo.append(icon);
+  }
+
+  renderButtons(buttons) {
+    const personajeActions = this.element.querySelector(".character__actions");
+
+    buttons.forEach((btn) => {
+      const button = new Button(
+        personajeActions,
+        "character__action btn",
+        btn.text,
+        [{ event: "click", action: btn.action }]
+      );
+      return button;
+    });
   }
 }
 export default Card;
