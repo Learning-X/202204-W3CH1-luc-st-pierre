@@ -10,12 +10,13 @@ class Card extends Component {
   ) {
     super(parentElement, className, htmlTag);
 
-    this.render(personaje);
+    this.renderCard(personaje);
     this.renderPersonajeProperties(personajeProperties);
     this.renderPersonajeEmojis(personaje);
+    this.renderPersonajeState(personaje);
   }
 
-  render(personaje) {
+  renderCard(personaje) {
     this.element.innerHTML = `
       <div class="card character__card">
             <img
@@ -32,8 +33,7 @@ class Card extends Component {
                   <li>Edad: ${personaje.edad} años</li>
                   <li>
                     Estado:
-                    <i class="fas fa-thumbs-down"></i>
-                    <i class="fas fa-thumbs-up"></i>
+                
                   </li>
                 </ul>
               </div>
@@ -68,7 +68,7 @@ class Card extends Component {
     const emojiElement = document.createElement("i");
     emojiElement.className = "emoji";
     emojiContainer.append(emojiElement);
-    // console.log(personaje.constructor.name);
+
     switch (personaje.constructor.name) {
       case "Rey":
         emojiElement.textContent = "👑";
@@ -89,6 +89,15 @@ class Card extends Component {
       default:
         break;
     }
+  }
+
+  renderPersonajeState(personaje) {
+    const personajeInfo = this.element.querySelector(
+      ".list-unstyled li:nth-child(2)"
+    );
+    const icon = document.createElement("i");
+    icon.className = personaje.vivo ? "fas fa-thumbs-up" : "fas fa-thumbs-down";
+    personajeInfo.append(icon);
   }
 }
 export default Card;
