@@ -5,9 +5,14 @@ class ButtonComponent extends Component {
     super(parentElement, className);
 
     this.render(text);
+    this.addEventListeners(actions);
   }
 
   render(text) {
     this.element.text = text;
+  }
+
+  addEventListeners(actions) {
+    this.element.addEventListeners("click", actions);
   }
 }
