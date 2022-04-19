@@ -13,5 +13,5 @@ const communicator = new Communication(document.body, "div", "comunication");
 personajes.forEach((personaje) => {
   const card = new Card(liContainer, "character col", "li", personaje);
   const properties = getPersonajeProperties(personaje);
-  console.log(properties);
+  // console.log(properties);
 });

@@ -1,24 +1,34 @@
+import Asesor from "../personajes/Asesor.js";
+import Escudero from "../personajes/Escudero.js";
+
 import Personaje from "./Personaje.js";
 
-// 1. Got properties from Personaje class
-// 2. Got to get own properties for each instance personajes
-// 3. Renamed name variables and function for confusion,
-// 4  Extracted, (filter) personaje own properties from Personaje class
+// todo - Need to get toUpperCase first letter property and a space between two word if needed
 
 const getPersonajeProperties = (personaje) => {
   const personajeClassProperties = Object.getOwnPropertyNames(personaje);
 
   const instancePersonaje = new Personaje();
+
   const instancePersonajeProperties =
     Object.getOwnPropertyNames(instancePersonaje);
 
-  // need to Not include properties from personajeClassProperties
   const personajeProperties = personajeClassProperties.filter(
     (prop) => !instancePersonajeProperties.includes(prop)
   );
 
-  // console.log(props);
-  return personajeProperties;
+  const personajeAttributes = personajeProperties.map((personajeProperty) => {
+    if (
+      ((personaje instanceof Escudero || personaje instanceof Asesor) &&
+        personajeProperty === "asesorado") ||
+      personajeProperty === "sirveA"
+    ) {
+      return `${personajeProperty}: ${personaje[personajeProperty].nombre}`;
+    }
+    return `${personajeProperty}: ${personaje[personajeProperty]}`;
+  });
+
+  return personajeAttributes;
 };
 
 export default getPersonajeProperties;
