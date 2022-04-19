@@ -11,7 +11,13 @@ const liContainer = document.querySelector(".app.container ul");
 const communicator = new Communication(document.body, "div", "comunication");
 
 personajes.forEach((personaje) => {
-  const card = new Card(liContainer, "character col", "li", personaje);
   const properties = getPersonajeProperties(personaje);
+  const card = new Card(
+    liContainer,
+    "character col",
+    "li",
+    personaje,
+    properties
+  );
   // console.log(properties);
 });

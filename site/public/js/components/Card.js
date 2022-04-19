@@ -1,14 +1,17 @@
 import Component from "./Component.js";
 
-// 1. will start by creating a Card component
-// 2. will need to render content
-// 3. will need a personaje object for character__card
-// 4. will need to destructure personaje
 class Card extends Component {
-  constructor(parentElement, className, htmlTag, personaje) {
+  constructor(
+    parentElement,
+    className,
+    htmlTag,
+    personaje,
+    personajeProperties
+  ) {
     super(parentElement, className, htmlTag);
 
     this.render(personaje);
+    this.renderPersonajeProperties(personajeProperties);
   }
 
   render(personaje) {
@@ -35,12 +38,6 @@ class Card extends Component {
               </div>
               <div class="character__overlay">
                 <ul class="list-unstyled">
-                  <li>Años de reinado: X</li>
-                  <li>Arma: XXX</li>
-                  <li>Destreza: X</li>
-                  <li>Peloteo: X</li>
-                  <li>Asesora a: X</li>
-                  <li>Sirve a: X</li>
                 </ul>
                 <div class="character__actions">
                   <button class="character__action btn">habla</button>
@@ -51,6 +48,18 @@ class Card extends Component {
             <i class="emoji"></i>
           </div>
     `;
+  }
+
+  renderPersonajeProperties(personajeProperties) {
+    const characterOverlay = this.element.querySelector(
+      ".character__overlay .list-unstyled"
+    );
+
+    personajeProperties.forEach((prop) => {
+      const personajeProperty = document.createElement("li");
+      personajeProperty.textContent = prop;
+      characterOverlay.append(personajeProperty);
+    });
   }
 }
 export default Card;
