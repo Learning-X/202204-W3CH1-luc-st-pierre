@@ -12,6 +12,7 @@ class Card extends Component {
 
     this.render(personaje);
     this.renderPersonajeProperties(personajeProperties);
+    this.renderPersonajeEmojis(personaje);
   }
 
   render(personaje) {
@@ -60,6 +61,34 @@ class Card extends Component {
       personajeProperty.textContent = prop;
       characterOverlay.append(personajeProperty);
     });
+  }
+
+  renderPersonajeEmojis(personaje) {
+    const emojiContainer = this.element.querySelector(".card.character__card");
+    const emojiElement = document.createElement("i");
+    emojiElement.className = "emoji";
+    emojiContainer.append(emojiElement);
+    // console.log(personaje.constructor.name);
+    switch (personaje.constructor.name) {
+      case "Rey":
+        emojiElement.textContent = "👑";
+        break;
+
+      case "Luchador":
+        emojiElement.textContent = "🗡";
+        break;
+
+      case "Escudero":
+        emojiElement.textContent = "🛡";
+        break;
+
+      case "Asesor":
+        emojiElement.textContent = " 🎓";
+        break;
+
+      default:
+        break;
+    }
   }
 }
 export default Card;
