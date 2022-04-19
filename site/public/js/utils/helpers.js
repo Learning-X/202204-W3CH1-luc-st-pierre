@@ -3,12 +3,7 @@ import Escudero from "../personajes/Escudero.js";
 
 import Personaje from "./Personaje.js";
 
-// 1. Got properties from Personaje class
-// 2. Got to get own properties for each instance personajes
-// 3. Renamed name variables and function for confusion,
-// 4. Filtered personaje own properties from Personaje class
-// 5. Mapped personajeProperties to return a string for each personaje
-// 6. Need to get
+// todo - Need to get toUpperCase first letter property and a space between two word if needed
 
 const getPersonajeProperties = (personaje) => {
   const personajeClassProperties = Object.getOwnPropertyNames(personaje);
@@ -28,16 +23,11 @@ const getPersonajeProperties = (personaje) => {
         personajeProperty === "asesorado") ||
       personajeProperty === "sirveA"
     ) {
-      // console.log(
-      //   `${personajeProperty}: ${personaje[personajeProperty].nombre}`
-      // );
       return `${personajeProperty}: ${personaje[personajeProperty].nombre}`;
     }
     return `${personajeProperty}: ${personaje[personajeProperty]}`;
   });
 
-  // console.log(personaje);
-  console.log(personajeAttributes);
   return personajeAttributes;
 };
 
