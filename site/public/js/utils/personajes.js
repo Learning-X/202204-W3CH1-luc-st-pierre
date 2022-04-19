@@ -1,7 +1,7 @@
-import Asesor from "./Asesor.js";
-import Escudero from "./Escudero.js";
-import Luchador from "./Luchador.js";
-import Rey from "./Rey.js";
+import Asesor from "../personajes/Asesor.js";
+import Escudero from "../personajes/Escudero.js";
+import Luchador from "../personajes/Luchador.js";
+import Rey from "../personajes/Rey.js";
 
 const initPersonajes = () => {
   const personajes = [];

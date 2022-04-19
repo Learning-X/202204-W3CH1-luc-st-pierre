@@ -1,12 +1,8 @@
 class Personaje {
   nombre;
-
   familia;
-
   edad;
-
   vivo = true;
-
   serie = "Juego de Tronos";
 
   constructor(nombrePersonaje, familiaPersonaje, edadPersonaje) {

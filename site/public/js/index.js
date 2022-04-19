@@ -1,6 +1,6 @@
 import Card from "./components/Card.js";
 import Communication from "./components/Communication.js";
-import initPersonajes from "./personajes.js";
+import initPersonajes from "./utils/personajes.js";
 import getPersonajeProperties from "./utils/helpers.js";
 
 // 1. will need to add each new Personaje to DOM to a parent container
