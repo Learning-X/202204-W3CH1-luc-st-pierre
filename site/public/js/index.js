@@ -9,12 +9,16 @@ const communicator = new Communication(document.body, "div", "comunication");
 
 personajes.forEach((personaje) => {
   const properties = getPersonajeProperties(personaje);
+  const hablaButtonAction = () => {};
+  const muereButtonAction = () => {};
+  const buttons = [hablaButtonAction, muereButtonAction];
   const card = new Card(
     liContainer,
     "character col",
     "li",
     personaje,
-    properties
+    properties,
+    buttons
   );
   // console.log(properties);
 });
