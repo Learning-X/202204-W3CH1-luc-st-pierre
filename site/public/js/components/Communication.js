@@ -1,6 +1,6 @@
 import Component from "./Component.js";
 
-export default class ButtonComponent extends Component {
+export default class Communication extends Component {
   constructor(parentElement, className, htmlTag) {
     super(parentElement, className, htmlTag);
 
