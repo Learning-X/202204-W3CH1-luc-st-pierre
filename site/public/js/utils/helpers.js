@@ -1,4 +1,4 @@
-import Personaje from "../Personaje.js";
+import Personaje from "./Personaje.js";
 
 // 1. Got properties from Personaje class
 // 2. Got to get own properties for each instance personajes
