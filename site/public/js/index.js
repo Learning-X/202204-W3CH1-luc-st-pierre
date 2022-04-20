@@ -12,8 +12,8 @@ const communicator = new Communication(document.body, "div", "comunication");
 
 personajes.forEach((personaje) => {
   const properties = getPersonajeProperties(personaje);
-  const hablaButton = { text: "habla", action: hablaButtonAction };
-  const muereButton = { text: "muere", action: muereButtonAction };
+  const hablaButton = { text: "habla", action: hablaButtonAction(personaje) };
+  const muereButton = { text: "muere", action: muereButtonAction(personaje) };
   const buttons = [hablaButton, muereButton];
   const card = new Card(
     liContainer,

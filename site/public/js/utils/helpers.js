@@ -3,7 +3,27 @@ import Escudero from "../personajes/Escudero.js";
 
 import Personaje from "./Personaje.js";
 
-export const hablaButtonAction = () => {};
+export const hablaButtonAction = (personaje) => {
+  const personajes = document.querySelectorAll(".character__card");
+
+  if (personaje) {
+    for (const perso of personajes) {
+      const personajeImage = perso.querySelector("img");
+      const splittedImage = personajeImage.src.split("/");
+
+      if (
+        splittedImage[splittedImage.length - 1] ===
+        `${personaje.nombre.toLowerCase()}.jpg`
+      ) {
+        personajeImage.classList.add("character__picture--dead");
+        const iconThumb = perso.querySelector(".fas.fa-thumbs-up");
+        iconThumb.className = "fas fa-thumbs-down";
+        personaje.muere();
+      }
+    }
+  }
+};
+hablaButtonAction();
 
 export const muereButtonAction = () => {};
 
