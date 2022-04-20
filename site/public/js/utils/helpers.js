@@ -6,22 +6,24 @@ import Personaje from "./Personaje.js";
 export const hablaButtonAction = (personaje) => {
   const personajes = document.querySelectorAll(".character__card");
 
-  for (const perso of personajes) {
-    const personajeImage = perso.querySelector("img");
-    const splittedImage = personajeImage.src.split("/");
+  if (personaje) {
+    for (const perso of personajes) {
+      const personajeImage = perso.querySelector("img");
+      const splittedImage = personajeImage.src.split("/");
 
-    const filename =
-      splittedImage[splittedImage.length - 1] ===
-      `${personaje.nombre.toLowerCase()}.jpg`;
-
-    if (filename) {
-      personajeImage.classList.add("character__picture--dead");
+      if (
+        splittedImage[splittedImage.length - 1] ===
+        `${personaje.nombre.toLowerCase()}.jpg`
+      ) {
+        personajeImage.classList.add("character__picture--dead");
+        const iconThumb = perso.querySelector(".fas.fa-thumbs-up");
+        iconThumb.className = "fas fa-thumbs-down";
+        personaje.muere();
+      }
     }
-    // splittedImage[splittedImage.length - 1] === `${personaje.nombre.toLowerCase()}.jpeg`
-    // console.log(personajeImage);
-    // console.log(splittedImage);
   }
 };
+hablaButtonAction();
 
 export const muereButtonAction = () => {};
 

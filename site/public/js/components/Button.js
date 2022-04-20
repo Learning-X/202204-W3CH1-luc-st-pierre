@@ -9,7 +9,7 @@ export default class Button extends Component {
   }
 
   render(text) {
-    this.element.text = text;
+    this.element.textContent = text;
   }
 
   addEventListener(actions) {
