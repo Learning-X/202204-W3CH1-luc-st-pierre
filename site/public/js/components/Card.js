@@ -23,7 +23,7 @@ class Card extends Component {
     this.element.innerHTML = `
       <div class="card character__card">
             <img
-              src="img/${personaje.nombre.toLowerCase()}.jpeg"
+              src="img/${personaje.nombre.toLowerCase()}.jpg"
               alt="Nombre y familia del personaje"
               class="character__picture card-img-top"
             />

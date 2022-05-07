@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import Asesor from "../personajes/Asesor.js";
 import Escudero from "../personajes/Escudero.js";
 
@@ -23,9 +24,17 @@ export const hablaButtonAction = (personaje) => {
     }
   }
 };
-hablaButtonAction();
 
-export const muereButtonAction = () => {};
+export const muereButtonAction = (communicator, personaje) => {
+  communicator.element.classList.add("on");
+  communicator.element.querySelector("img");
+  communicator.src = `img/${personaje.nombre.toLowerCase()}.jpg`;
+  setTimeout(() => {
+    communicator.element.classList.remove("on");
+  }, 2000);
+  communicator.element.querySelector(".comunications__text").textContent =
+    personaje.comunicar();
+};
 
 // todo - Need to get toUpperCase first letter property and a space between two word if needed
 const getPersonajeProperties = (personaje) => {

@@ -8,12 +8,15 @@ import getPersonajeProperties, {
 
 const personajes = initPersonajes();
 const liContainer = document.querySelector(".app.container ul");
-const communicator = new Communication(document.body, "div", "comunication");
+const communicator = new Communication(document.body, "comunication", "div");
 
 personajes.forEach((personaje) => {
   const properties = getPersonajeProperties(personaje);
   const hablaButton = { text: "habla", action: hablaButtonAction(personaje) };
-  const muereButton = { text: "muere", action: muereButtonAction(personaje) };
+  const muereButton = {
+    text: "muere",
+    action: muereButtonAction(communicator, personaje),
+  };
   const buttons = [hablaButton, muereButton];
   const card = new Card(
     liContainer,
